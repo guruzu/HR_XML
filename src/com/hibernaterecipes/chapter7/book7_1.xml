@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter7">
+	<class name="Book7_1" table="BOOK7_1" schema="BookShop7">
+		<id name="book_id"  column="BOOK_ID" type="long">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="isbn" type="string" column="ISBN" />
+		<property name="bookName" type="string" column="BOOK_NAME" />
+		<property name="publishDate" type="date" column="PUBLISH_DATE" />
+		<property name="price" type="integer" column="PRICE" />
+		<set name="chapters" fetch="join" lazy="false">
+			<key column="BOOK_ID" />
+			<one-to-many class="Chapter7_1" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter5">
+	<class name="Publisher5_2" table="Publisher5_2" schema="BOOK5">
+		<id name="Publisher_id" type="long" column="PUBLISHER_ID" >
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="code" type="string">
+			<column name="CODE" length="4" not-null="true" unique="true" />
+		</property>
+		<property name="name" type="string">
+			<column name="PUBLISHER_NAME" length="100" not-null="true" />
+		</property>
+		<property name="address" type="string">
+			<column name="ADDRESS" length="200" />
+		</property>
+	</class>
+</hibernate-mapping>

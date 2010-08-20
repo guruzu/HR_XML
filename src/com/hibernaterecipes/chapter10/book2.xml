@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter10" auto-import="false" >
+	<import class="Book2" rename="bookchapter10_1"/>
+	<class name="Book2" table="BookChapter10_1" dynamic-insert="true" dynamic-update="true" schema="BOOK"> 
+		<id name="isbn" type="string" column="ISBN" />
+		<property name="name" type="string" column="BOOK_NAME" />
+		<property name="publishDate" type="date" column="PUBLISH_DATE" />
+		<property name="price" type="int" column="PRICE" />
+		<property name="createDate" type="date" column="CREATE_DATE" />
+		</class>
+</hibernate-mapping>

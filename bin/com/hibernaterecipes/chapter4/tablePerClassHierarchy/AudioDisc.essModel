@@ -1,0 +1,33 @@
+[Box: ::com.hibernaterecipes.chapter4.tablePerClassHierarchy - ::<<Unknown>>::Serializable]
+X=238
+Y=477
+Visible=0
+
+[Box: ::com.hibernaterecipes.chapter4.tablePerClassHierarchy - ::com.hibernaterecipes.chapter4.tablePerClassHierarchy::AudioDisc]
+X=20
+Y=265
+
+[Box: ::com.hibernaterecipes.chapter4.tablePerClassHierarchy - ::com.hibernaterecipes.chapter4.tablePerClassHierarchy::Disc]
+X=122
+Y=40
+
+[Box: ::com.hibernaterecipes.chapter4.tablePerClassHierarchy - ::com.hibernaterecipes.chapter4.tablePerClassHierarchy::VideoDisc]
+X=225
+Y=265
+
+[Diagram: ::com.hibernaterecipes.chapter4.tablePerClassHierarchy]
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowAssoc=0
+
+[Box:  - ::com.hibernaterecipes.chapter4.tablePerClassHierarchy]
+X=20
+Y=40
+
+[Diagram: ]
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowAssoc=1
+

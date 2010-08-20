@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter10" auto-import="false" >
+	<import class="Book" rename="bookchapter10"/>
+	<class name="Book" table="BookChapter10" dynamic-insert="true" dynamic-update="true" schema="BOOK"> 
+		<id name="isbn" type="string" column="ISBN" />
+		<property name="name" type="string" column="BOOK_NAME" />
+		<property name="publishDate" type="date" column="PUBLISH_DATE" />
+		<property name="price" type="int" column="PRICE" />
+		<many-to-one name="userRank" class="UserRank" column="RANK" cascade="save-update"/>
+		
+		<filter name="filterByRank" 
+			condition=":currentRank>=(select distinct(b.RANK) from BookChapter10 b
+										where b.rank=:requestedRank)"></filter>
+	</class>
+</hibernate-mapping>

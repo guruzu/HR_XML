@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+package com.hibernaterecipes.chapter10;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @author Guruzu
+ *
+ */
+public class Book2 extends Auditable implements Serializable{
+		
+	private Long book_id;
+	private String isbn;
+	private String name;
+	private String publisher;
+	private Date publishDate;
+	private Integer price;
+	
+	
+	
+	public Long getBook_id() {
+		return book_id;
+	}
+	public void setBook_id(Long bookId) {
+		book_id = bookId;
+	}
+	public String getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPublisher() {
+		return publisher;
+	}
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
+	}
+	public Date getPublishDate() {
+		return publishDate;
+	}
+	public void setPublishDate(Date publishDate) {
+		this.publishDate = publishDate;
+	}
+	public Integer getPrice() {
+		return price;
+	}
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+	
+	
+}

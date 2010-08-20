@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter6">
+	<class name="Book6_21" table="Book6_21" schema="BOOK6">
+		<id name="book_id" type="long" column="BOOK_ID" >
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="isbn" type="string">
+		<column name="ISBN" length="50" not-null="true" unique="true" />
+		</property>
+		<property name="name" type="string">
+		<column name="BOOK_NAME" length="100" not-null="true" />
+		</property>
+		<property name="publishDate" type="date" column="PUBLISH_DATE" />
+		<property name="price" type="int" column="PRICE" />
+		<idbag name="chapters" table="Book621_Chapter" schema="BOOK6">
+			<collection-id type="long" column="Book621_Chapter_id">
+				<generator class="hilo"></generator>
+			</collection-id>
+			<key column="BOOK_ID"></key>
+			<element type="string" column="CHAPTER_NAME" not-null="true"></element>
+		</idbag>
+		
+	</class>
+</hibernate-mapping>

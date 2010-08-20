@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter10" auto-import="false" >
+	<import class="UserRank" rename="userRank"/>
+	<class name="UserRank" table="UserRank" dynamic-insert="true" dynamic-update="true" schema="BOOK"> 
+		<id name="rank"  column="RANK" type="long">
+			<generator class="assigned">
+			</generator>
+		</id>
+		<property name="userType" type="string" column="USERTYPE" />
+		
+	</class>
+	<filter-def name="filterByRank">
+        	<filter-param name="currentRank" type="long"/>
+        	<filter-param name="requestedRank" type="long"/>
+    </filter-def>
+</hibernate-mapping>

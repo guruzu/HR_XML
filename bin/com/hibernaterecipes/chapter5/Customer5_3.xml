@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter5">
+	<class name="Customer5_3" table="Customer" schema="BOOK5">
+		<id name="id" type="long" column="ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="firstName" type="string" column="FIRST_NAME" />
+		<property name="lastName" type="string" column="LAST_NAME" />
+		<property name="idCardNo" type="string" column="ID_CARD_NO" />
+		<property name="countryCode" type="string" column="COUNTRY_CODE" />
+		<property name="email" type="string" column="EMAIL" />
+		<join table="CustomerAddress" optional="true" schema="BOOK5" >
+			<key column="ID" unique="true">
+			</key>
+			<many-to-one name="address"
+					column="ADDRESS_ID" 
+					not-null="true"
+					cascade="save-update"
+					unique="true">
+			</many-to-one>
+			
+			
+		</join>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.otherrequests">
+	<class name="Product" table="Product" schema="BOOKSHOP">
+		<id name="productId" type="integer" column="PRODUCT_ID" >
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="productName" type="string">
+			<column name="PRODUCT_NAME" length="50" not-null="true" unique="true" />
+		</property>
+		<many-to-one name="parentProduct" class="Product" column="PARENT_PRODUCT_ID" cascade="save-update" fetch="join"/>
+	</class>
+</hibernate-mapping>

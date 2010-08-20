@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter3">
+<class name="OrdersCh3_1" table="ORDERS">
+	<id name="id" type="long" column="ID">
+		<generator class="native" />
+	</id>
+	<component name="weekdayContact" class="Contact">
+		<property name="recipient" type="string" column="WEEKDAY_RECIPIENT" />
+		<property name="phone" type="string" column="WEEKDAY_PHONE" />
+		<property name="address" type="string" column="WEEKDAY_ADDRESS" />
+	</component>
+	<component name="holidayContact" class="Contact">
+		<property name="recipient" type="string" column="HOLIDAY_RECIPIENT" />
+		<property name="phone" type="string" column="HOLIDAY_PHONE" />
+		<property name="address" type="string" column="HOLIDAY_ADDRESS" />
+	</component>
+</class>
+</hibernate-mapping>

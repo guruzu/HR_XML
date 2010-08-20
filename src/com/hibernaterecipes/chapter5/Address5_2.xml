@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter5">
+	<class name="Address5_2" table="ADDRESS" schema="BOOK5">
+		<id name="id" type="long" column="ADDRESS_ID" >
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="city" type="string" column="CITY" />
+		<property name="street" type="string" column="STREET" />
+		<property name="doorplate" type="string" column="DOOR_PLATE" />
+		<one-to-one name="customer" class="Customer5_2" property-ref="address"></one-to-one>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter4.custommappings">
+<class name="OrdersCh4_5" table="BOOK_ORDERS_2">
+	<id name="id" type="long" column="ID">
+		<generator class="native" />
+	</id>
+	<component name="weekdayContact" class="ContactCh4_5">
+		<property name="recipient" type="string" column="WEEKDAY_RECIPIENT" />
+		<property name="phone" type="com.hibernaterecipes.chapter4.custommappings.PhoneCompositeUserType">
+			<column name="WEEKDAY_AREACODE"></column>
+			<column name="WEEKDAY_TELEPHONE"></column>
+		</property>
+		<many-to-one name="address" class="com.hibernaterecipes.chapter3.Address" column="WEEKDAY_ADDRESS_ID" />
+	</component>
+	<component name="holidayContact" class="ContactCh4_5">
+		<property name="recipient" type="string" column="HOLIDAY_RECIPIENT" />
+		<property name="phone" type="com.hibernaterecipes.chapter4.custommappings.PhoneCompositeUserType">
+			<column name="HOLIDAY_AREACODE"></column>
+			<column name="HOLIDAY_TELEPHONE"></column>
+		</property>
+		<many-to-one name="address" class="com.hibernaterecipes.chapter3.Address" column="HOLIDAY_ADDRESS_ID" />
+	</component>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter7">
+	<class name="Chapter7_41" table="CHAPTER7_41" dynamic-insert="true" dynamic-update="true" schema="BookShop7">
+		<id name="id"  column="id" type="long">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="title" type="string" column="title" />
+		<property name="noOfPages" type="int" column="NUM_OF_PAGES" />
+		<set name="book" table="BOOK_CHAPTER" inverse="true" cascade="save-update">
+			<key column="id"></key>
+			<many-to-many class="Book7_41" column="BOOK_ID" />
+			
+		</set>
+	</class>
+</hibernate-mapping>

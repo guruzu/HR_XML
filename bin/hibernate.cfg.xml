@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
+        <property name="hibernate.connection.url">jdbc:derby://localhost:1527/BookShopDB</property>
+        <property name="hibernate.connection.username">book</property>
+        <property name="hibernate.connection.password">book</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.jdbc.batch_size">25</property>
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">10</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+        <!--<property name="hbm2ddl.auto">create</property>
+        
+        
+        --><!--<mapping resource="com/hibernaterecipes/chapter10/userRank.xml" />-->
+        <!--<mapping resource="com/hibernaterecipes/chapter10/book2.xml" />
+    	<mapping resource="com/hibernaterecipes/mapping/book.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter2/book.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter3/Orders.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter3/OrdersCh3_1.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter3/OrdersCh3_2.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter3/Address.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter3/OrdersCh3_3.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter3/OrdersCh3_4_1.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter4/tablePerClassHierarchy/disc.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter4/tablePerSubClass/disc_2.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter4/custommappings/OrdersCh4_4.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter4/custommappings/OrdersCh4_5.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Customer5_1.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Address5_1.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Customer5_2.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Address5_2.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Customer5_3.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Address5_3.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Book.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Publisher.xml" />-->
+    	<!--<mapping resource="com/hibernaterecipes/chapter5/Book5_2.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter5/Publisher5_2.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter6/Book6_1.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter6/Book6_2.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter6/Book6_21.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter6/Book6_3.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter6/Book6_4.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter6/Book6_5.xml" />-->
+    	<!--<mapping resource="com/hibernaterecipes/chapter7/book7_1.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter7/chapter7_1.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter7/book7_3.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter7/chapter7_3.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter7/book7_4.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter7/chapter7_4.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter7/book7_41.xml" />
+    	<mapping resource="com/hibernaterecipes/chapter7/chapter7_41.xml" />
+    -->
+    	<mapping resource="com/hibernaterecipes/otherrequests/Product.xml" />
+    </session-factory>
+ </hibernate-configuration>

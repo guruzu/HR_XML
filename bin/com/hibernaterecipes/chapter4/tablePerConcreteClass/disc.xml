@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hibernaterecipes.chapter4.tablePerClassHierarchy">
+<class name="Disc_3" abstract="true">
+	<id name="discId" type="long" column="DISC_ID">
+		<generator class="native"/>
+	</id>
+	<property name="name" type="java.lang.String" column="NAME" />
+	<property name="price" type="java.lang.Integer" column="PRICE" />
+	<union-subclass name="AudioDisc_3" table="AUDIO_DISC_3">
+		<property name="singer" type="java.lang.String" column="SINGER" />
+		<property name="noOfSongs" type="java.lang.Integer" column="NO_OF_SONGS" />
+	</union-subclass>
+	<union-subclass name="VideoDisc_3" table="VIDEO_DISC_3">
+		<property name="director" type="java.lang.String" column="DIRECTOR" />
+		<property name="language" type="java.lang.String" column="LANGUAGE" />
+	</union-subclass>
+	
+</class>
+</hibernate-mapping>
